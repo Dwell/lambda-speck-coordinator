@@ -146,8 +146,8 @@ const API = function(mcHosts, dateInstance) {
     let coordinatorCacheKey = mcPrefix + "coordinatorId:" + coordinatorId;
 
     return Promise.all([
-      mc.touch(coordinatorCacheKey, ttl + TTL_GRACE),
-      mc.touch(machineIdCacheKey, ttl + TTL_GRACE),
+      mc.touchAsync(coordinatorCacheKey, ttl + TTL_GRACE),
+      mc.touchAsync(machineIdCacheKey, ttl + TTL_GRACE),
     ]);
   };
 
@@ -157,8 +157,8 @@ const API = function(mcHosts, dateInstance) {
     let coordinatorCacheKey = mcPrefix + "coordinatorId:" + coordinatorId;
 
     return Promise.all([
-      mc.touch(coordinatorCacheKey, ttl + TTL_GRACE),
-      mc.touch(workerIdCacheKey, ttl + TTL_GRACE),
+      mc.touchAsync(coordinatorCacheKey, ttl + TTL_GRACE),
+      mc.touchAsync(workerIdCacheKey, ttl + TTL_GRACE),
     ]);
   };
 
